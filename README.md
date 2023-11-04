@@ -1,6 +1,6 @@
  <h1>Project Documentation</h1>
 
-    <h2>Components</h2>
+   <h2>Components</h2>
 
     <h3>Menu</h3>
     <h4>Props:</h4>
