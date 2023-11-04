@@ -1,4 +1,4 @@
-Components
+<h1>Components</h1>
 Menu
 Props:
 products: Array of products
