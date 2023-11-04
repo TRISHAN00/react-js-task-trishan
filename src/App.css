@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #cccccc;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 10px 20px;
+}
+
+/* menu style */
+.menu-area {
+    transition: 0.3s;
+}
+
+.menu-area-wrap {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.menu-area-wrap-left {}
+
+.menu-area-wrap-left-selected {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-area-wrap-left-selected p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.menu-area-wrap-left-selected input {
+    width: 20px;
+    height: 20px;
+}
+
+.menu-area-wrap-right {
+    text-align: right;
+}
+
+.menu-area-wrap-right button {
+    color: red;
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.menu-area-wrap-right {}
+
+/* products */
+.products {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    overflow: hidden;
+}
+
+
+
+.products>*:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+/* single product */
+.single-product {
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    overflow: hidden;
+}
+
+.single-product:after {
+    position: absolute;
+    content: '';
+    background-color: #000;
+    inset: 0;
+    transition: 0.3s;
+    opacity: 0;
+    padding: 10px;
+}
+
+.single-product:hover.single-product:after {
+    opacity: 0.5;
+    visibility: visible;
+}
+
+.single-product img {
+    width: 100%;
+    height: auto;
+}
+
+.single-product input {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 9;
+    height: 20px;
+    width: 20px;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.single-product:hover.single-product input {
+    opacity: 1 !important;
+}
+
+@media (min-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+}
+
+@media (min-width: 1024px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1280px) {
+    .products {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1440px) {
+    .products {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+/* modal */
+.modal {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: #000;
+    z-index: 99;
+    opacity: 0.5;
+    height: 100vh;
+}
